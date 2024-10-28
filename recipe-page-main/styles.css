@@ -1,0 +1,188 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --stone-100: hsl(30, 54%, 90%);
+    --stone-150: hsl(30, 18%, 87%);
+    --stone-600: hsl(30, 10%, 34%);
+    --stone-900: hsl(24, 5%, 18%);
+    --brown-800: hsl(14, 45%, 36%);
+    --rose-800: hsl(332, 51%, 32%);
+    --rose-50: hsl(330, 100%, 98%);
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    background-color: var(--white);
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*  ===================
+    TYPOGRAPHY
+    =================== */
+
+h1,
+h2 {
+    font-family: "Young Serif", sans-serif;
+}
+
+h1 {
+    margin-bottom: 0;
+    line-height: 1;
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: var(--brown-800);
+    font-weight: 800;
+    font-size: 1.75rem;
+    margin-top: 0;
+}
+
+.header-subtitle {
+    margin-bottom: 2em;
+}
+
+.list {
+    list-style-position: outside;
+    padding-left: 1em;
+}
+
+.list-item {
+    margin-bottom: 1em;
+    padding-left: 1em
+}
+
+.list-item::marker {
+    color: var(--brown-800);
+    font-weight: 800;
+}
+
+.prep-list-item::marker {
+    color: var(--rose-800);
+    font-weight: 800;
+}
+
+strong {
+    color: var(--stone-600);
+}
+
+section {
+    border-bottom: 2px solid var(--stone-150);
+    padding: 1em 0;
+}
+
+section:first-child,
+section:last-child {
+    border-bottom: none;
+}
+
+
+
+/*  ===================
+    LAYOUT
+    =================== */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: minmax(1em, 1fr) minmax(300px, 600px) minmax(1em, 1fr);
+    gap: 1em 1em;
+}
+
+.header > *{
+    grid-column: 2 / 3;
+}
+
+.header-img {
+    order: -1;
+    grid-column: span 3;
+}
+
+.main-content > *{
+    grid-column: 2 / 3;
+}
+
+@media (min-width: 500px) {
+    body {
+        margin: 2em 0;
+    }
+
+    .grid-container {
+        grid-template-columns: minmax(1em, 1fr) minmax(300px, 800px) minmax(1em, 1fr);
+    }
+
+    .header-img {
+        grid-column: 2;
+        border-radius: 10px;
+    }
+
+    header {
+        margin-top: 4em;
+    }
+}
+
+/*  ===================
+    PREP TIME
+    =================== */
+
+.prep-time {
+    background-color: var(--rose-50);
+    padding: .75em 1.5em;
+    border-radius: 10px;
+}
+
+.prep-time-title {
+    color: var(--rose-800);
+    font-family: "Outfit", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/*  ===================
+    NUTRITION TABLE
+    =================== */
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 4em;
+        background-color: var(--rose-50);
+        border-radius: 10px;    
+    }
+
+    tr {
+        border-bottom: 1px solid var(--stone-150);  
+        vertical-align: middle; 
+    }
+
+
+    td {
+        text-align: left;
+        vertical-align: middle;
+        padding: .5em 1em;
+        font-weight: 600;
+        color: var(--stone-600)
+    }
+
+    td:nth-child(even) {
+        color: var(--rose-800);
+        font-weight: 800;
+    }
+
+
+
